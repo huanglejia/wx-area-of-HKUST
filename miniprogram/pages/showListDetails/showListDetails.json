@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商品展示",
+  "usingComponents": {
+    "van-card": "../../dist/card/index",
+    "van-rate": "../../dist/rate/index",
+    "van-toast": "../../dist/toast/index"
+
+  }
+}

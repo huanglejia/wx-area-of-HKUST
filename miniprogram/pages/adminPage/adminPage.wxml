@@ -1,0 +1,23 @@
+
+<van-button type="primary" size="large" bindtap="onInsertStore">新增店铺</van-button>
+<view wx:for="{{store}}" wx:key="_id">
+<i-card title="{{item.sName}}" thumb="{{item.sPhoto}}" 
+extra="{{item._id}}"
+>
+
+<view slot="content">
+{{item.sAddr}}
+<view style="text-align: right">
+<van-button size="mini" bindtap="onUpdataDetail" open-type="launchApp" data-id="{{item._id}}" >管理商品</van-button>
+<van-button size="mini" bindtap="onInsertDetail" open-type="launchApp" data-id="{{item._id}}" >新增商品</van-button>
+</view>
+</view>
+
+
+
+</i-card>
+</view>
+<button wx:if="{{visible}}"  bindtap="onBottom">加载更多</button>
+
+
+

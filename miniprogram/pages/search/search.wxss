@@ -1,0 +1,23 @@
+@import "../../style/colorui/main.wxss";
+@import "../../style/colorui/icon.wxss";
+
+page {
+   height: 100%;
+   width: 100%;
+}
+
+.container {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   padding: 200rpx 0;
+   box-sizing: border-box;
+}
+
+.route_img {
+   width: 50rpx;
+   height: 50rpx;
+   text-align: center;
+}

@@ -1,0 +1,21 @@
+<van-toast id="van-toast" />
+<view>
+	<form bindsubmit="onSubmit">
+		<van-cell-group>
+			<van-field name="title" placeholder="请输入商品标题" label="商品标题" autosize />
+		</van-cell-group>
+		<van-cell-group>
+			<van-field name="description" placeholder="请输入商品描述" label="商品描述" type="textarea" autosize />
+		</van-cell-group>
+		<van-cell-group>
+			<van-field name="price" placeholder="请输入商品价格" label="价格" autosize />
+		</van-cell-group>
+		<van-button type="warning" bindtap='uploadImgHandle'>上传图片</van-button>
+		<view>
+			<block wx:for="{{tempImg}}" wx:key="{{index}}tmpimg">
+				<image src='{{item}}' mode='aspectFill'></image>
+			</block>
+		</view>
+		<button form-type="submit" class="btn1">确认</button>
+	</form>
+</view>

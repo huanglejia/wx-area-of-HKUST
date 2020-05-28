@@ -1,0 +1,51 @@
+<van-toast id="van-toast" />
+<view wx:for="{{detail}}" wx:key="_id">
+	<van-card  price="{{item.price}}" desc="{{item.description}}" title="{{item.title}}" thumb="{{item.picture}}">
+		<view slot="price-top" style="margin-button:5rpx">
+			推荐:
+			<van-rate readonly allow-half="true" value="{{item.starLevel}}" />
+		</view>
+		<view slot="footer">
+			<label style="margin-right:40px">已有{{item.evaluate.length}} 人评价</label>
+			<van-button size="mini" bindtap="onDelete" open-type="launchApp" data-stores_id="{{item.stores_id}}" data-id="{{item._id}}">删除</van-button>
+						<van-button size="mini" bindtap="showPopup" open-type="launchApp" data-stores_id="{{item.stores_id}}" data-id="{{item._id}}">评价</van-button>
+		</view>
+	</van-card>
+</view>
+<button wx:if="{{visible}}" bindtap="onBottom">加载更多</button>
+
+	<van-cell title="展示弹出层" is-link bind:click="showPopup" />
+			<van-popup show="{{ show }}" round position="bottom" custom-style="height: 50%" bind:close="onClose">
+		<view style="text-align: center;">
+	<view style="margin:5rpx;font-size: 20px;">
+		<label>商品评价</label>
+</view>
+	<view style="margin-bottom: 10px;font-size: 16px;">综合评价:
+			<van-rate  readonly="{{isNotEvaluate}}"  value="{{ star }}" bind:change="onChangeStar"  />
+				</view>
+
+
+
+<view > 
+
+<radio-group   bindchange="onChangeRadio" style="margin-bottom: 10px">
+<radio value="0" checked="{{radioChecked[0]}}" color="#000000"  disabled="{{isNotEvaluate}}" />一般
+<radio value="1" checked="{{radioChecked[1]}}" color="#000000" disabled="{{isNotEvaluate}}" />满意
+<radio value="2" checked="{{radioChecked[2]}}" color="#000000" disabled="{{isNotEvaluate}}" />超值
+<radio value="3" checked="{{radioChecked[3]}}" color="#000000" disabled="{{isNotEvaluate}}" />必备
+</radio-group>
+
+<view class='section' wx:if="{{isNotEvaluate}}">
+<view class='bg_red shape'> <label>{{evalLabelNum[0]}}票</label></view>
+<view class='bg_blue shape'><label>{{evalLabelNum[1]}}票</label></view>
+<view class='bg_green shape'><label>{{evalLabelNum[2]}}票</label></view>
+<view class='bg_yellow shape'><label>{{evalLabelNum[3]}}票</label></view>
+</view>
+</view>
+
+			<van-button  wx:if="{{!isNotEvaluate}}" bindtap="onEvalButton" style="margin-buttom:10rpx" >确认</van-button>
+	<view style="margin-top:40rpx;font-size: 14px;color: #696969">
+		<label>您的每一次评价,都将是一次服务升级！</label>
+</view>
+</view>
+			</van-popup>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "详情",
+  "usingComponents": {
+    "van-divider": "../../dist/divider/index"
+  }
+}

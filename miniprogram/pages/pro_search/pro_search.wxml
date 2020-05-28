@@ -1,0 +1,55 @@
+<van-toast id="van-toast" />
+<van-search
+  value="{{ value }}"
+  label="地址"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:change="onChange"
+  bind:search="onSearch"
+  bindconfirm="search" 
+>
+  <view slot="action" bind:tap="onClick" bindinput="input" catchtap="search" >搜索</view>
+</van-search>
+
+
+<view wx:for="{{detail}}" wx:key="_id">
+<van-card
+  price = "{{item.price}}"
+  desc= "{{item.description}}"
+  title="{{item.title}}"
+  thumb="{{item.picture}}"
+>
+<view slot="price-top" style="margin-button:5rpx">
+推荐:
+<van-rate
+  readonly
+  allow-half="true"
+  value="{{item.starLevel}}"
+/>
+</view>
+  <view slot="footer">
+  		<label style="margin-right:40px">已有{{item.evaluate.length}} 人评价</label>
+    <van-button size="mini" bindtap="oninsert" open-type="launchApp" data-stores_id="{{item.stores_id}}" data-id="{{item._id}}">收藏</van-button>
+  </view>
+</van-card>
+</view>
+
+
+
+
+
+  <!--未找到商品-->
+  <view wx:if="{{detail == 0}}" class="search-result">
+    <icon type="info" size="120rpx" class="search-result-icon"></icon>
+    <text class="search-result fz30 c666 ta-c">未搜索到该商品，建议修改为常用名称！</text>
+  </view>
+  <!--搜索结果提醒-->
+
+<button wx:if="{{visible}}"  bindtap="onBottom">加载更多</button>
+
+  <view wx:if="{{detail != null}}" bindtap="clearInput" class="return-btn fz30 c666">返回</view>
+<!-- <view wx:for="{{detail}}" wx:key="_id">
+title:<label>{{item.title}}</label>
+price:<label>{{item.price}}</label>` 
+review:<label>{{item.review}}</label>
+</view> -->

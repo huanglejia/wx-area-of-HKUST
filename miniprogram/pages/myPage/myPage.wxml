@@ -1,0 +1,32 @@
+<van-toast id="van-toast" />
+<view class="userImage">
+	<open-data type="userAvatarUrl"></open-data>
+</view>
+<view class="userLabel">
+	<open-data type="userNickName" lang="zh_CN"></open-data>
+</view>
+<view class="page">
+	<view class="page__bd">
+		<wux-cell-group>
+
+			<wux-cell thumb="../../style/img/ui/collect.png" title="我的收藏" bind:tap="onClick_1"></wux-cell>
+
+			<wux-cell thumb="../../style/img/ui/entrance.png" title="商家入口" bind:tap="onClick"></wux-cell>
+
+		</wux-cell-group>
+	</view>
+</view>
+
+
+<view class="page">
+	<view class="page__bd">
+		<wux-cell-group>
+			<wux-cell thumb="../../style/img/ui/transpond.png"  title="推荐转发" is-link open-type="share"></wux-cell>
+			<wux-cell thumb="../../style/img/ui/feedback.png" title="意见反馈" is-link open-type='feedback' type='primary'></wux-cell>
+			<wux-cell thumb="../../style/img/ui/contact.png" title="联系我们" is-link open-type="contact" bind:contact="onContact"></wux-cell>
+			<navigator url="../../pages/about/about">
+				<wux-cell thumb="../../style/img/ui/about.png" title="关于我们" is-link></wux-cell>
+			</navigator>
+		</wux-cell-group>
+	</view>
+</view>

@@ -1,0 +1,31 @@
+/* pages/addProductTest/addProductTest.wxss */
+radio{
+  margin-left:20rpx;
+}
+
+.section {
+display:
+flex;
+flex-direction:
+row;
+justify-content:
+center;
+
+}
+.bg_red {
+  background: lightcoral;
+  }
+.shape {
+  width: 60px;
+  margin-right: 40rpx;
+}
+.bg_blue {
+  background:lightblue;
+}
+.bg_green {
+  background: greenyellow;
+  }
+.bg_yellow {
+    background: rgb(126, 165, 66);
+    }
+  

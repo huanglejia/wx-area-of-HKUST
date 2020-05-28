@@ -1,0 +1,27 @@
+
+<view>
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:change="onChange"
+  bind:search="onSearch"
+>
+<view slot="action" bind:tap="onClick">搜索</view>
+</van-search>
+</view>
+
+<view wx:for="{{store}}" wx:key="_id">
+<!-- <navigator url="../showListDetails/showListDetails?id={{item._id}}"> -->
+<i-card title="{{item.sName}}" thumb="{{item.sPhoto}}" 
+extra="{{item._id}}"
+>
+<view slot="content">{{item.sAddr}}</view>
+
+
+</i-card>
+</view>
+<button wx:if="{{visible}}"  bindtap="onBottom">加载更多</button>
+
+
+

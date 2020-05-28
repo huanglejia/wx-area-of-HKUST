@@ -1,0 +1,33 @@
+<view class="cu-bar search bg-white fixed">
+	<view class="search-form round">
+		<text class="cuIcon-search"></text>
+		<input type="text" placeholder="请输地点名称" confirm-type="搜索" bindinput="bindSearchInput" value="{{keyword}}"></input>
+	</view>
+	<view class="action">
+		<button bindtap="bindReset" class="cu-btn text-white shadow-blur round" style="background:#003689">重置</button>
+	</view>
+</view>
+
+
+<scroll-view scroll-y style="margin-top: 50px; height:calc(100vh - 50px)" scroll-with-animation="true" enable-back-to-top="true">
+	<view class="cu-list menu-avatar">
+
+		<view wx:for="{{showData}}" wx:key class="cu-item" style="{{isSelectedBuild -1 == index ? 'background-color: #e1d7f0;' : ''}}">
+
+			<image class="cu-avatar radius lg" src="{{imgCDN}}{{item.img[0]}}"></image>
+			<navigator class="content" hover-class="none" url='../details/details?tid={{item.tid}}&bid={{item.bid}}'>
+				<view style="color:#71246c">
+					<text class="text-cut">{{item.name}}</text>
+				</view>
+				<view class="text-gray text-sm flex">
+					<text class="text-cut">{{item.address}}</text>
+				</view>
+			</navigator>
+
+			<navigator class="action" hover-class="none" url='../polyline/polyline?latitude={{item.latitude}}&longitude={{item.longitude}}'>
+				<image class="route_img" src="/style/img/ui/icon_route.png"></image>
+			</navigator>
+		</view>
+
+	</view>
+</scroll-view>

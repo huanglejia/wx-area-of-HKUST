@@ -1,0 +1,67 @@
+<view style="width: 100%;">
+
+	<!-- 导航栏 -->
+	<scroll-view scroll-x class="nav" style="background:#FFFFFF;" scroll-with-animation scroll-left="{{scrollLeft}}" wx:if="{{!fullScreen}}">
+		<view class="cu-item  {{index==TabCur? 'cur':''}}" wx:for="{{buildlData}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
+			{{item.name}}
+		</view>
+	</scroll-view>
+
+	<!-- 地图 -->
+	<map longitude="{{longitude}}" latitude="{{latitude}}" scale="{{buildlData[isSelectedBuildType].scale}}" markers="{{buildlData[isSelectedBuildType].data}}" bindmarkertap="markertap" bindregionchange="regionchange" include-points="{{buildlData[isSelectedBuildType].data}}" show-location="true" enable-overlooking="true" enable-3D="true" style="width:auto; height:{{fullScreen ? '89vh':'calc(100vh - 40px - 43vh)'}};">
+
+		<!-- 操作按钮 -->
+		<cover-view class="controls">
+			<cover-view class="bg" bindtap="navigateToSearch">
+				<cover-image class="bg_img" src="../../style/img/ui/map_nav_bg.png" />
+			</cover-view>
+
+			<cover-view class="content">
+				<cover-view bindtap="navigateToSearch">
+					<cover-image class="icon_search" src="../../style/img/ui/icon_search.png" />
+				</cover-view>
+				<cover-view bindtap="getLocation">
+					<cover-image class="icon_location" src="../../style/img/ui/icon_location.png" />
+				</cover-view>
+			</cover-view>
+		</cover-view>
+	</map>
+
+	<!-- 全屏按钮 -->
+	<view bindtap="fullScreenDisplay" class="text-center text-black" style="height:3vh; ">
+		<text>已标记{{buildlData[isSelectedBuildType].data.length}}个{{buildlData[TabCur].name}}地点</text>
+		<text class="cuIcon-{{fullScreen?'fold':'unfold'}}"></text>
+	</view>
+
+	<!-- 列表 -->
+	<scroll-view scroll-y scroll-top="{{(isSelectedBuild -1 ) * 140}}rpx" style="height:{{fullScreen ? 0 : 30}}vh" scroll-with-animation="true" enable-back-to-top="true">
+		<view class="cu-list menu-avatar">
+
+			<view wx:for="{{buildlData[isSelectedBuildType].data}}" wx:key="id" class="cu-item" style="{{isSelectedBuild - 1 == index ? 'background-color: #e1d7f0;' : ''}}">
+
+
+  <!-- <view  wx:for='{{imgArr}}'>
+    <image  src='{{item}}' data-index='{{index}}' bindtap='previewImg'></image>
+  </view>
+</view> -->
+
+
+				<image class="cu-avatar radius lg" data-index='{{index}}'  bindtap='previewImg' src="{{imgCDN}}{{item.img[0]}}"></image>
+				<navigator class="content" hover-class="none" url='../details/details?tid={{isSelectedBuildType}}&bid={{index}}'>
+					<view style="color:#000000">
+						<text class="text-cut">{{item.name}}</text>
+					</view>
+					<view class="text-gray text-sm flex">
+						<text class="text-cut">{{item.address}}</text>
+					</view>
+				</navigator>
+
+				<navigator class="action" hover-class="none" url='../polyline/polyline?latitude={{item.latitude}}&longitude={{item.longitude}}'>
+					<image class="route_img" src="../../style/img/ui/icon_route.png"></image>
+				</navigator>
+
+			</view>
+
+		</view>
+	</scroll-view>
+</view>

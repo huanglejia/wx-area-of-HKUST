@@ -1,0 +1,15 @@
+swiper {
+  height: 400rpx;
+  width: 96%;
+  align-self: center;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+swiper image {
+  width: 100%;
+}
+
+van-grid {
+  margin-top: 20rpx;
+}

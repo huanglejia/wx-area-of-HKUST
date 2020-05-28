@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商品添加",
+  "usingComponents": {
+    "van-field": "../../dist/field/index",
+    "van-uploader": "../../dist/uploader/index",
+    "van-dropdown-menu": "../../dist/dropdown-menu/index",
+    "van-dropdown-item": "../../dist/dropdown-item/index"
+  }
+}

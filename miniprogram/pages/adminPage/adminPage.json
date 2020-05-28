@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "店铺展示",
+  "usingComponents": {
+    "i-card": "../../dist1/card/index"
+  }
+}

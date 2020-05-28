@@ -1,0 +1,34 @@
+@import "../../style/colorui/main.wxss";
+@import "../../style/colorui/icon.wxss";
+
+page {
+   height: 100%;
+   width: 100%;
+}
+
+.container {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   padding: 200rpx 0;
+   box-sizing: border-box;
+}
+.navi_map {
+   width: auto;
+   height: 100vh;
+}
+
+.distance {
+   position: absolute;
+   bottom: 40rpx;
+   right: 20rpx;
+   height: 50rpx;
+   line-height: 50rpx;
+   text-align: center;
+   padding: 5rpx 8rpx 5rpx 8rpx;
+   color: #fff;
+   background: #71246c;
+   border-radius: 5px;
+}

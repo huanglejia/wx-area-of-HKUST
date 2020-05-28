@@ -1,0 +1,49 @@
+<view>
+	<van-search value="{{ value }}" placeholder="请输入搜索关键字" use-action-slot bind:change="onChange" bind:search="onSearch">
+		<!-- <navigator url="../search/search?searchVal={{value}}"> -->
+		<view slot="action" bind:tap="onClick">搜索</view>
+		<!-- </navigator> -->
+	</van-search>
+</view>
+
+<swiper autoplay indicator-dots circular>
+	<swiper-item wx:for="{{banners}}" wx:key="_id">
+		<navigator url="{{item.url}}">
+			<image src="{{item.src}}">
+			</image>
+		</navigator>
+	</swiper-item>
+</swiper>
+<view style="margin-top: 10rpx">
+	<i-icon type="systemprompt" />
+	<van-notice-bar text="热烈庆祝科大生活小程序正式上线，欢迎各位同学的访问。科大生活---最懂你的校园小程序！" />
+</view>
+<view style="margin-top: 10rpx">
+	<van-grid column-num="4">
+		<navigator url="../showList/showList?category=商店">
+			<van-grid-item icon="shop" text="商店" />
+			
+		</navigator>
+		<navigator url="../showList/showList?category=食堂">
+			<van-grid-item icon="../../style/img/ui/canteen.png" text="食堂" />
+		</navigator>
+		<navigator url="../showList/showList?category=小吃">
+			<van-grid-item icon="fire" text="小吃" />
+		</navigator>
+		<navigator url="../showList/showList?category=聚餐">
+			<van-grid-item icon="friends" text="聚餐" />
+		</navigator>
+		<navigator url="../showList/showList?category=服装">
+			<van-grid-item icon="vip-card" text="服装" />
+		</navigator>
+		<navigator url="../showList/showList?category=娱乐">
+			<van-grid-item icon="video" text="娱乐" />
+		</navigator>
+		<navigator url="../showList/showList?category=旅游">
+			<van-grid-item icon="map-marked" text="旅游" />
+		</navigator>
+		<navigator url="../showList/showList?category=必备">
+			<van-grid-item icon="invition" text="必备" />
+		</navigator>
+	</van-grid>
+</view>

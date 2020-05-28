@@ -1,0 +1,8 @@
+/* pages/addProduct/addProduct.wxss */
+.btn1 {
+  width: 80%;
+  margin-top: 20rpx;
+  background-color:rgba(255, 98, 0, 0.46);
+  color: white;
+}
+

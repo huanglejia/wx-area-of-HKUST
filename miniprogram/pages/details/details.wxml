@@ -1,0 +1,18 @@
+<view class="body">
+	<view class='container'>
+
+		<block wx:for="{{build.img}}" wx:key="*this">
+
+			<image class='head-image'   bindtap='previewImg' src="{{imgCDN}}{{item}}"> </image>
+		</block>
+
+
+
+	</view>
+	<van-divider customStyle="color: #000000; border-color: #1989fa;margin-left:30rpx;margin-right:30rpx">
+	</van-divider>
+	<text class='title'>{{build.name}}\n</text>
+	<van-divider customStyle="color: #000000; border-color: #1989fa;margin-left:30rpx;margin-right:30rpx">
+	</van-divider>
+	<text class='content'  decode="{{true}}" >&emsp;&emsp;{{ build.description }}</text>
+</view>

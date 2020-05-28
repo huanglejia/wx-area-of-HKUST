@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的主页",
+  "usingComponents": {
+    "wux-cell-group": "../../dist2/cell-group/index",
+    "wux-cell": "../../dist2/cell/index",
+    "van-image": "../../dist/image/index"
+  }
+}

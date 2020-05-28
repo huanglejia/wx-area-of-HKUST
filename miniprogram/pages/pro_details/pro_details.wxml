@@ -1,0 +1,19 @@
+<van-toast id="van-toast" />
+<view>
+	<form bindsubmit="onUpdate">
+		<van-cell-group>
+			<van-field name="title" value="{{ detail.title }}" label="商品标题" autosize />
+		</van-cell-group>
+		<van-cell-group>
+			<van-field name="description" value="{{ detail.description }}" label="商品描述" type="textarea" autosize />
+		</van-cell-group>
+		<van-cell-group>
+			<van-field name="price" value="{{detail.price}}" label="价格" autosize />
+		</van-cell-group>
+
+		<button form-type="submit">更新</button>
+		<button bindtap="onDelete">删除</button>
+	</form>
+</view>
+
+

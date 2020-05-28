@@ -1,0 +1,5 @@
+<view >      
+  <view  wx:for='{{imgArr}}'>
+    <image  src='{{item}}' data-index='{{index}}' bindtap='previewImg'></image>
+  </view>
+</view>

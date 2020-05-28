@@ -1,0 +1,5 @@
+<map class="navi_map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" markers="{{markers}}" polyline="{{polyline}}" include-points="{{markers}}" show-location enable-overlooking="true" enable-3D="true">
+	<block wx:if="{{ (distance != '') || (time != '') }}">
+		<cover-view class="distance">{{distance? distance:''}}{{time? '，'+time:''}}</cover-view>
+	</block>
+</map>

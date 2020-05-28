@@ -1,0 +1,46 @@
+<van-toast id="van-toast" />
+<view>
+	<form bindsubmit="onSubmit">
+		<van-cell-group>
+			<van-field name="sName" placeholder="请输入店铺名称" label="店铺名称" autosize />
+		</van-cell-group>
+		<van-cell-group>
+			<van-field name="sAddr" placeholder="请输入店铺地址" label="店铺地址" type="textarea" autosize />
+		</van-cell-group>
+		<van-cell-group>
+			<van-field name="sOwner" placeholder="请输入店铺联系人" label="店铺管理员" autosize />
+		</van-cell-group>
+	<van-cell-group>
+			<van-field name="adminOpenid" placeholder="请输入联系人ID" label="联系人ID" autosize />
+		</van-cell-group>
+    <van-cell-group>
+			<van-field name="sTele" placeholder="请输入店铺联系方式" label="联系方式" autosize />
+		</van-cell-group>
+
+    <van-cell-group>
+      <van-dropdown-menu >
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}"  bind:change="onChange" data-id="{{ value1 }}" />
+</van-dropdown-menu>
+		</van-cell-group>
+
+
+
+
+		<van-button type="warning" bindtap='uploadImgHandle'>上传图片</van-button>
+		<view>
+			<block wx:for="{{tempImg}}" wx:key="{{index}}tmpimg">
+				<image src='{{item}}' mode='aspectFill'></image>
+			</block>
+		</view>
+		<button form-type="submit" class="btn1">确认</button>
+	</form>
+</view>
+
+
+
+
+
+
+
+
+

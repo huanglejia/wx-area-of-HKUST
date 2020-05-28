@@ -1,0 +1,33 @@
+<view class="box">
+	<image class="bg" src="cloud://test1-q5765.7465-test1-q5765-1302025353/bg.png" />
+	<view class="header">
+		<view class="userImage">
+			<image src="../../logo.png" style="width: 552px;height:180px;"></image>
+		</view>
+	</view>
+	<van-divider customStyle="color: #1989fa; border-color: #1989fa; margin-left:30rpx;margin-right:30rpx" />
+	<view class="class-box">
+		<block>
+			<view class="class-item">
+				<view class="icon-box">
+					<text>简介</text>
+				</view>
+				<text  decode="{{true}}" class="info-box">&emsp;科大生活小程序致力于帮助科大学子查询校园周边生活各类讯息，并提供了系列地图导航为来访科大的游客，学生等提供更多的便利！</text>
+			</view>
+			<view class="class-item">
+				<view class="icon-box">
+					<text>关于我们</text>
+				</view>
+				<text  decode="{{true}}" class="info-box">&emsp;我们是来自河北科技大学的在校学生，旨在为同学提供更多便利的服务。欢迎大家联系我们提供更多信息！</text>
+			</view>
+
+			<view class="class-item">
+				<view class="icon-box">
+					<text>致谢</text>
+				</view>
+				<text  decode="{{true}}" class="info-box">&emsp;感谢Vant、ColorUI等开源组件的开发人员，感谢CSDN的海轰，感谢B站的小胖同学，感谢GitHub的plainmaple的地图开源框架项目。</text>
+			</view>
+
+		</block>
+	</view>
+</view>

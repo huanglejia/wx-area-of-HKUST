@@ -1,0 +1,92 @@
+/* pages/about/about.wxss */
+.box {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  /* background-color: rgb(255, 255, 255); */
+  height: 1200rpx;
+}
+
+.header {
+  width: auto;
+}
+
+.center {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  /* background-color: rgb(255, 255, 255); */
+  height: 500rpx;
+}
+
+.content {
+  margin-top: 100rpx;
+  margin-left: 100rpx;
+}
+
+.userImage {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+}
+
+.page {
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+
+}
+
+
+/**index.wxss**/
+/*背景图片*/
+.bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  min-height: 100%;
+}
+
+
+/*分类详细说明*/
+.class-box {
+  margin: 20rpx 0;
+}
+
+.class-box .class-item {
+  display: flex;
+  /* height: 177rpx; */
+  padding: 20rpx;
+  align-items: center;
+  border-radius: 15rpx;
+  background-color: #F5F5E1;
+  margin-bottom: 15rpx;
+}
+
+.class-box .class-item .icon-box {
+  width: 155rpx;
+  height: 155rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-right: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.class-box .class-item .icon-box image {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.class-box .class-item .icon-box text {
+  font-size: 30rpx;
+  /* color: #29C7A4; */
+}
+
+.class-box .class-item .info-box {
+  /* color: #fff; */
+  /* font-size: 27rpx; */
+  flex: 1;
+}
