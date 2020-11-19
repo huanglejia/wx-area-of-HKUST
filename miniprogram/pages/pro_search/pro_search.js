@@ -120,20 +120,6 @@ Page({
         this.setData({
           detail:res.data
         })
-        // for (var i = 0; i < res.data.length; i++) {
-        //   // var contents = "goodList[" + i + "].contents"
-        //   // var id = "goodList[" + i + "].id"
-        //   // var img_url = "goodList[" + i + "].img_url"
-        //   // var price = "goodList[" + i + "].price"
-        //   // var buy_num = "goodList[" + i + "].buy_num"
-        //   // this.setData({
-        //   //   [contents]: res.data[i].contents,
-        //   //   [id]: res.data[i]._id,
-        //   //   [img_url]: res.data[i].img_url,
-        //   //   [price]: res.data[i].price,
-        //   //   [buy_num]: res.data[i].buy_num,
-        //   // })
-        //   //console.log(this.data.goodList[i].contents)
            wx.hideLoading();
         // }
       }).catch(err => {

@@ -4,7 +4,7 @@
 		<input type="text" placeholder="请输地点名称" confirm-type="搜索" bindinput="bindSearchInput" value="{{keyword}}"></input>
 	</view>
 	<view class="action">
-		<button bindtap="bindReset" class="cu-btn text-white shadow-blur round" style="background:#003689">重置</button>
+		<button bindtap="bindReset" class="cu-btn text-white shadow-blur round" style="font-">重置</button>
 	</view>
 </view>
 

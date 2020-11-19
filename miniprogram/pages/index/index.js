@@ -27,14 +27,14 @@ Page({
       url: '../pro_search/pro_search?searchVal=' + this.data.value,
     })
   },
-  onClick() {
-    // Toast('搜索' + this.data.value);
-    console.log(this.data.value)
-    wx.navigateTo({
-      url: '../pro_search/pro_search?searchVal=' + this.data.value,
-    })
+  // onClick() {
+  //   // Toast('搜索' + this.data.value);
+  //   console.log(this.data.value)
+  //   wx.navigateTo({
+  //     url: '../pro_search/pro_search?searchVal=' + this.data.value,
+  //   })
 
-  },
+  // },
   /**
    * 生命周期函数--监听页面加载
    */

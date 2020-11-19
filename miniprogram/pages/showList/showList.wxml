@@ -12,7 +12,6 @@
 </view>
 
 <view wx:for="{{store}}" wx:key="_id">
-<!-- <navigator url="../showListDetails/showListDetails?id={{item._id}}"> -->
 <i-card title="{{item.sName}}" thumb="{{item.sPhoto}}" 
 extra="{{item._id}}"
 >

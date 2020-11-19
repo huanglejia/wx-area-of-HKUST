@@ -10,14 +10,13 @@ Page({
       isSelectedBuildType: 0, //选中的景观类型
       isSelectedBuild: 0, //选中的景观
       buildlData: schoolData.map, //默认地图数据
-      latitude: 37.984026, //默认纬度
-      longitude: 114.528652, //默认经度
+      latitude: 37.979244, //默认纬度
+      longitude: 114.516661, //默认经度
       imgCDN: config.imgCDN, //图片域名
       urls:{}  //当前标签图片集合
    },
    onShow() {
       this.getTabBar().init();
-
    },
    //图片放大
    previewImg:function(e){
@@ -34,7 +33,6 @@ Page({
       })
     },
    onLoad: function () {
-
       //map中数据
       var that = this;
       //如果已经授权，提前获取定位信息
@@ -88,7 +86,10 @@ Page({
       var that = this;
       that.setData({
          TabCur: e.currentTarget.dataset.id,
-         scrollLeft: (e.currentTarget.dataset.id - 1) * 60
+         scrollLeft: (e.currentTarget.dataset.id - 1) * 60,
+         latitude: this.data.buildlData[e.currentTarget.dataset.id].data[0].latitude,
+         longitude: this.data.buildlData[e.currentTarget.dataset.id].data[0].longitude
+         
       })
       that.setData({
          isSelectedBuildType: e.currentTarget.dataset.id,

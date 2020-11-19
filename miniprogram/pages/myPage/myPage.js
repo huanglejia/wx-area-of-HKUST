@@ -2,13 +2,14 @@
 import Toast from 'path/to/../../../../dist/toast/toast';
 const db = wx.cloud.database();
 const stores= db.collection("stores");
+const admin= db.collection("administrators");
 const app = getApp()
 Page({
   /**
    * 页面的初始数据
    */
   data: {},
-
+//跳转我的收藏
   onClick_1() {
     Toast.loading({
       mask: true,
@@ -18,32 +19,42 @@ Page({
       url: "../../pages/collectionPage/collectionPage",
     })
   },
+  //商家入口
   onClick() {
-    if(getApp().globalData.user_openid=='oT20L45LxoE3DMT5c52-BJgw3gdo'){
-      Toast.success('超级管理员！');
-      wx.navigateTo({
-        url: '../adminPage/adminPage'
-      })
-      return
-    }
-    stores.where({
-      adminOpenid: getApp().globalData.user_openid,
-    }).get().then(res => {
-      console.log(res.data[0])
-      if (res.data.length >= 1) {
-        Toast.loading({
-          mask: true,
-          message: '加载中...',
-        });
+
+    admin.where({
+      superAdminOpenid: getApp().globalData.user_openid,//超级管理员权限
+    }).get().then(res=>{
+      console.log(res)
+      if(res.data.length==1){
+        Toast.success('超级管理员！');
         wx.navigateTo({
-          url: '../addProductTest/addProductTest?stores_id=' + res.data[0]._id,
+          url: '../adminPage/adminPage'
         })
-      } else {
-        console.log(res);
-        Toast.fail('暂无权限哦！');
+        return false;
+      }
+      else{
+        stores.where({
+          adminOpenid: getApp().globalData.user_openid,//商家管理人员
+        }).get().then(res => {
+          console.log(res.data[0])
+          if (res.data.length >= 1) {
+            Toast.success('管理员！');
+            wx.navigateTo({
+              url: '../addProductTest/addProductTest?stores_id=' + res.data[0]._id,
+            })
+          } else {
+            console.log(res);
+            Toast.fail('暂无权限哦！');
+          }
+        })
+
 
       }
+
+
     })
+
   },
   /**
    * 生命周期函数--监听页面加载

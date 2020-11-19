@@ -1,6 +1,7 @@
 var app = getApp();
 var schoolData = require('../../resources/schoolData.js')
 var config = require('../../utils/config.js');
+const yunmap = db.collection("map");
 Page({
 
    data: {
@@ -44,13 +45,19 @@ Page({
       });
    },
 
-
    bindReset: function () {
       var that = this;
       that.setData({
          keyword: null,
          showData: null
       });
+   },
+   onLoad: function () {
+      yunmap.get().then(res => {
+        this.setData({
+          buildlData:res.data[0].map
+        })
+      })
    },
 
 })

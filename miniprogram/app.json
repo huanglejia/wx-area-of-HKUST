@@ -29,11 +29,9 @@
     "pages/pro_details/pro_details",
     "pages/about/about",
     "pages/details/details",
-    "pages/polyline/polyline",
     "pages/search/search",
     "pages/adminPage/adminPage",
-    "pages/addstore/addstore",
-    "pages/test/test"
+    "pages/addstore/addstore"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -43,12 +41,20 @@
     "navigationBarTextStyle": "black"
 
   },
+  
   "permission": {
     "scope.userLocation": {
       "desc": "您的位置信息将用于校园导览"
     }
   },
-
+  
+    "plugins": {
+        "routePlan": {
+        "version": "1.0.3",
+        "provider": "wx50b5593e81dd937a"
+        }
+    }
+,
   "usingComponents": {
     "van-button": "../../dist/button/index",
     "van-tabbar": "../../dist/tabbar/index",
